@@ -1,0 +1,92 @@
+<?php
+    // Init du path générique
+	// Equivalent du if ternaire ci dessous
+	// $path = '';
+    // if($template !== 'index') {
+    //     $path = '../';
+    // }
+    
+    $path = $template !== 'index' ? '../' : '';
+
+    // Init session
+    if(session_status() == PHP_SESSION_NONE)
+    {
+        // Démarrage du module PHP de gestion des sessions.
+        // Ce qui donne accès à $_SESSION
+        session_start();
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' />
+    <link rel="stylesheet" type="text/css" href="<?= $path ?> css/normalize.css">
+
+    <link rel="stylesheet" href="<?= $path ?>css/style.css">
+
+    <title>Elodie Fontaine</title>
+
+</head>
+
+<body>
+
+    <!-- En-tête commune -->
+    <header id="haut">
+    
+        <section class="header_menu">
+            <div class="widzmain menu_top">
+                <div class="logo">
+                    <a href="<?= $path ?>index.php">
+                        <img src="<?= $path ?>img/logo.png" alt="logo">
+                    </a>
+                </div>
+
+                <nav class="menu">
+                    <ul class="nav">
+                        <li><a href="<?= $path ?>controllers/apropos.php">À propros</a></li>
+                        <li><a href="<?= $path ?>controllers/realisation.php">Réalisations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <div><a id="retour" class="invisible" href="#haut"></a></div>
+
+    </header>
+
+    <main>
+        <?php include "templates/$template.phtml" ?>
+    </main>
+
+    <!-- Pied de page commun -->
+    <footer id="footer">
+
+        <section class="footer-top">
+            <article class="footer_copyright">
+                <p>© 2023 Elodie Fontaine</p>
+            </article>
+        </section>
+
+        <div >
+            
+        </div>
+
+    </footer>
+
+
+    <!-- Code principal JavaScript de l'application -->
+    <script src="<?= $path ?>js/script.js"></script>
+    
+
+</body>
+
+</html>

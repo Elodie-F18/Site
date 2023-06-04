@@ -1,0 +1,29 @@
+<section class="page_rea">
+    <div class="page_title_strap">
+        <h1 class="page_title">Réalisations</h1>
+    </div>
+
+    <div class="real_intro">
+        <p>Ces projets ont été réalisés au sein de l'agence web Kalelia et de l'agence de communication Groupe Echo</p>
+    </div>
+
+    <div class="rea_list widzmain">
+        <div class="rea_single_list">
+            <?php foreach($posts as $post): ?>
+            <article class="rea_content_single" style="background-image: url('<?='../img/post/'.$post['picture'] ?>')">
+                <!--<img src="<//?='img/post/'.$post['picture'] ?>" alt="">-->
+                <div class="rea_single_list_hover">
+                    <div class="rea_inlist_main">
+                        <h2 class="rea_single_list_title title"><a href="<?= $path ?>controllers/show_post.php?id=<?= intval($post['id']) ?>"><?= $post['title'] ?></a>
+                        </h2>
+                        <p class="single_post_cat"><?= $post['name'] ?></p>
+                    </div>
+                </div>
+                <a class="rea_single_list_link"
+                    href="<?= $path ?>controllers/show_post.php?id=<?= intval($post['id']) ?>"></a>
+            </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+</section>

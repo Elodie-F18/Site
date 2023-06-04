@@ -1,0 +1,39 @@
+<!-- Page d'article détaillé -->
+
+
+<div class="page_title_strap">
+    <h1 class="page_title"><?= $post['title'] ?></h1>
+</div>
+
+
+<section id="rea_show_post" class="rea_single">
+    <div class="rea_single_strap widzmain">
+        <aside class="rea_single_pic">
+            <img class="rea_single_img" src="<?='../img/post/'.$post['picture'] ?>">
+            </img>
+        </aside>
+
+        <aside class="page_content page_single">
+            <article class="single_rea_description">
+                <h2 class="page_content_title title">Description du projet</h2>
+                <div class="page_hentry">
+                    <?= $post['contents'] ?>
+                </div>
+            </article>
+            <article class="single_rea_tech">
+                <h2 class="page_content_title title">CMS utilisé</h2>
+                <p><?= $post['projet_cms'] ?></p>
+            </article>
+            <article class="single_rea_agence">
+                <h2 class="page_content_title title">Réalisé au sein de</h2>
+                <p><?= $post['name'] ?></p>
+            </article>
+
+            <div class="rea_btn">
+                <a class="rea_link" href="<?= $post['link'] ?>" target="_blank">
+                    <span class="rea_link_span">Voir le site</span>
+                </a>
+            </div>
+        </aside>
+    </div>
+</section>
