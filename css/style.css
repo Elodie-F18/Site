@@ -191,6 +191,11 @@ a#retour.visible{
     border-bottom: 1px solid #283618;
 }
 
+.rea_btn .rea_link.rea_link_page {
+    margin-top:0!important;
+    font-size:15px;
+}
+
 
 .home_competence {
     margin-top:65px;
