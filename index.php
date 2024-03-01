@@ -6,11 +6,6 @@ require_once 'config/Database.php';
 // @TODO optimiser les appels, pour n'avoir qu'une seule instance
 $db = new Database();
 
-// init session
-if(session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 $query = 
 	//On sélectionne les éléments qui nous intéresse provenant de la table post : titre, contenu, prénom et nom, date de création
     'SELECT 

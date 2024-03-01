@@ -7,14 +7,6 @@
     // }
     
     $path = $template !== 'index' ? '../' : '';
-
-    // Init session
-    if(session_status() == PHP_SESSION_NONE)
-    {
-        // Démarrage du module PHP de gestion des sessions.
-        // Ce qui donne accès à $_SESSION
-        session_start();
-    }
 ?>
 
 <!DOCTYPE html>
